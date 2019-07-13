@@ -8,14 +8,6 @@ const initialState = {
 // ================
 // Reducer functors
 // ================
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> e96d1d0... Initial commit
-=======
-
->>>>>>> 9b527e2... Remove edit focus for existing to-do on enter
 const fetchTodos = (state, payload) => {
   return {
     ...state,

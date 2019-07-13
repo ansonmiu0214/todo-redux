@@ -1,4 +1,6 @@
-# todo-redux
+# todo-redux 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6741287f-ae22-4548-ba26-99fe31325e5b/deploy-status)](https://app.netlify.com/sites/ansonmiu0214-todo-redux/deploys)
 
 Simple to-do list styled like iOS Reminders -- to learn React and Redux.
 
