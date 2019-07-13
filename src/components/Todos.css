@@ -1,0 +1,27 @@
+.Todos {
+  width: 80vw;
+  max-width: 640px;
+  height: 85vh;
+  max-height: 960px; 
+  margin: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background: white;
+}
+
+.Header {
+  padding-bottom: 20px;
+}
+
+.Top {
+  border-bottom: 1px solid grey;
+}
+
+.Reset {
+  color: red;
+}
+
+.Reset:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

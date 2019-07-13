@@ -1,0 +1,76 @@
+.Entry {
+  padding: 20px 5px;
+  border-bottom: 1px grey solid;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.Entry.Completed .Title {
+  text-decoration: line-through;
+  color: green;
+}
+
+.Icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 30px;
+}
+
+.Outer {
+  border: 1px black solid;
+  border-radius: 30px;
+}
+
+.Entry.Completed .Outer {
+  border-color: green;
+}
+
+.Checkbox {
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 1px white solid;
+  border-radius: 24px;
+  margin: auto;
+  margin-top: 2px;
+}
+
+.Entry.Completed .Checkbox {
+  border-color: green;
+  background-color: green;
+}
+
+.Title {
+  flex: 1;
+  font-size: 20px;
+  min-height: 32px;
+  line-height: 32px;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-right: 10px;
+}
+
+.NewTodo .Outer {
+  border: 1px black dashed;
+}
+
+input {
+  font-size: 20px;
+  flex: 1;
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 32px;
+  line-height: 32px;
+  border: none;
+}
+
+.Entry.Completed input {
+  text-decoration: line-through;
+  color: green;
+}
