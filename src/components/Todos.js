@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Todos.css'
 import Todo from './Todo';
 
+import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchTodos, toggleTodo, addTodo, onChangeTodo, resetToRemote, onChangeExistingTodo, onDeleteTodo } from '../actions/todoActions'
 
@@ -46,21 +47,21 @@ function Todos(props) {
       event.target.blur()
     }
   }
-
-  return (
-    <div className="Todos" style={{ display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }} className="Top">
-        <div className="Header">
-          <h1>To-Dos</h1>
-          <span onClick={() => props.resetToRemote()} className="Reset">Reset</span>
-        </div>
-        <div className="CompleteCount">
-          <h1>{todos.filter(post => post.completed).length}</h1>
-        </div>
-      </div>
   
-      <div style={{ flex: 1, overflowY: 'auto' }}>
-        {todos.map((todo, key) => <Todo key={key} todo={todo} onToggle={onToggle} onChangeExisting={onChangeExisting} onMaybeDelete={onMaybeDelete} /> )}
+  return (
+    <div className="TodosView">
+      <Route path='/' exact render={() => 
+        <>
+        {todos.filter(todo => !todo.completed)
+              .map((todo, key) => 
+                <Todo
+                  key={key}
+                  todo={todo}
+                  onToggle={onToggle}
+                  onChangeExisting={onChangeExisting}
+                  onMaybeDelete={onMaybeDelete}
+                />
+              )}
         <div className="Entry NewTodo">
           <span className="Icon Outer"></span>
           <input 
@@ -70,7 +71,20 @@ function Todos(props) {
             value={props.newTodo}
             />
         </div>
-      </div>
+        </>
+      } />
+      <Route path='/completed' exact render={() => (
+        todos.filter(todo => todo.completed)
+          .map((todo, key) => 
+            <Todo
+              key={key}
+              todo={todo}
+              onToggle={onToggle}
+              onChangeExisting={onChangeExisting}
+              onMaybeDelete={onMaybeDelete}
+            />
+          )
+      )} />
     </div>
   );
 }

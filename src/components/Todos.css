@@ -1,3 +1,8 @@
+.TodosView {
+  flex: 1;
+  overflow-y: 'auto';
+}
+
 .Todos {
   width: 80vw;
   max-width: 640px;
@@ -15,13 +20,4 @@
 
 .Top {
   border-bottom: 1px solid grey;
-}
-
-.Reset {
-  color: red;
-}
-
-.Reset:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }

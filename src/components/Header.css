@@ -1,0 +1,21 @@
+.NavLink {
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.NavLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#reset {
+  color: red;
+}
+
+#backlog {
+  color: blue;
+}
+
+#completed {
+  color: green;
+}

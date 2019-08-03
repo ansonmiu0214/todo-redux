@@ -3,3 +3,17 @@
   display: flex;
   background-color: #147efb;
 }
+
+.Content {
+  width: 80vw;
+  max-width: 640px;
+  height: 85vh;
+  max-height: 960px; 
+  margin: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background: white;
+
+  display: 'flex';
+  flex-direction: 'column';
+}
