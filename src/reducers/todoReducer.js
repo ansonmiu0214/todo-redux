@@ -1,4 +1,4 @@
-import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, ONCHANGE_TODO, ONCHANGE_EXISTING_TODO, ONDELETE_TODO } from '../actions/types'
+import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, ONCHANGE_TODO, ONCHANGE_EXISTING_TODO, ONDELETE_TODO, DELETE_ALL } from '../actions/types'
 
 const initialState = {
   todos: [],
@@ -59,6 +59,10 @@ const onDeleteTodo = ({ todos, ...prevState }, { id }) => ({
   todos: todos.filter(todo => todo.id !== id)
 })
 
+const onDeleteAll = (prevState, payload) => ({
+  ...initialState
+})
+
 // =========================
 // Mapping: type-to-functor.
 // ========================= 
@@ -68,9 +72,9 @@ const reducers = {
   [ONCHANGE_TODO]: onChangeTodo,
   [ADD_TODO]: addTodo,
   [ONCHANGE_EXISTING_TODO]: onChangeExistingTodo,
-  [ONDELETE_TODO]: onDeleteTodo
+  [ONDELETE_TODO]: onDeleteTodo,
+  [DELETE_ALL]: onDeleteAll,
 }
-
 
 const todoReducer = (state = initialState, { type, payload }) => {
   const reducer = reducers[type]

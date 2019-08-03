@@ -1,5 +1,7 @@
+
 .NavLink {
-  margin-right: 20px;
+  padding: 5px 10px;
+  margin-right: 10px;
   text-decoration: none;
 }
 
@@ -8,14 +10,52 @@
   cursor: pointer;
 }
 
-#reset {
-  color: red;
-}
-
 #backlog {
   color: blue;
 }
 
 #completed {
   color: green;
+}
+
+.Active {
+  border-bottom: 2px solid currentColor;
+}
+
+.Row {
+  width: 80vw;
+  max-width: 640px;
+  display: flex;
+}
+
+.Row > div:first-child {
+  flex-grow: 1;
+}
+
+#reset, #sample {
+  border-radius: 5px;
+  border: 1px solid currentColor;
+}
+
+#reset {
+  color: red;
+}
+
+#reset:hover {
+  background-color: red;
+  text-decoration: none;
+  color: white;
+}
+
+#sample:hover {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+}
+
+.Top {
+  display: 'flex';
+  justify-content: 'space-between';
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
 }

@@ -1,8 +1,3 @@
-.TodosView {
-  flex: 1;
-  overflow-y: 'auto';
-}
-
 .Todos {
   width: 80vw;
   max-width: 640px;
@@ -12,12 +7,4 @@
   padding: 30px;
   border-radius: 30px;
   background: white;
-}
-
-.Header {
-  padding-bottom: 20px;
-}
-
-.Top {
-  border-bottom: 1px solid grey;
 }

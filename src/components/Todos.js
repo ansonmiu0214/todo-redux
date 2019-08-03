@@ -47,9 +47,9 @@ function Todos(props) {
       event.target.blur()
     }
   }
-  
+
   return (
-    <div className="TodosView">
+    <div className="TodosView" style={{ flex: 1, overflowY: 'auto' }}>
       <Route path='/' exact render={() => 
         <>
         {todos.filter(todo => !todo.completed)

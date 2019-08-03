@@ -1,24 +1,31 @@
 import React from 'react';
 import './Header.css'
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { connect } from 'react-redux'
-import { resetToRemote } from '../actions/todoActions'
+import { resetToRemote, deleteAll } from '../actions/todoActions'
 
 function Header(props) {
-  const { completedTodos, resetToRemote } = props
+  const { completedTodos, resetToRemote, deleteAll } = props
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }} className="Top">
-      <div className="Header">
-        <h1>To-Dos</h1>
-        <span onClick={() => resetToRemote()} className="NavLink" id="reset">Reset</span>
-        <Link to="/" className="NavLink" id="backlog">Backlog</Link>
-        <Link to="/completed" className="NavLink" id="completed">Completed</Link>
+    <div className="Top">
+      <div className="Row">
+        <div><h1>To-Dos</h1></div>
+        <div className="CompleteCount">
+          <h1>{completedTodos.length}</h1>
+        </div>
       </div>
-      <div className="CompleteCount">
-        <h1>{completedTodos.length}</h1>
+      <div className="Row">
+        <div>
+          <NavLink exact activeClassName="Active" to="/" className="NavLink" id="backlog">Backlog</NavLink>
+          <NavLink exact activeClassName="Active" to="/completed" className="NavLink" id="completed">Completed</NavLink>
+        </div>
+        <div>
+          <span onClick={() => resetToRemote()} className="NavLink" id="sample">Sample</span>
+          <span onClick={() => deleteAll()} className="NavLink" id="reset">Reset</span>
+        </div>
       </div>
     </div>
   )
@@ -29,6 +36,6 @@ const mapStateToProperties = state => ({
 })
 
 // Connect actions into prop.
-const actions = { resetToRemote }
+const actions = { resetToRemote, deleteAll }
 
 export default connect(mapStateToProperties, actions)(Header);

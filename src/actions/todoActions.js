@@ -1,4 +1,4 @@
-import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, ONCHANGE_TODO, ONCHANGE_EXISTING_TODO, ONDELETE_TODO } from './types'
+import { FETCH_TODOS, ADD_TODO, TOGGLE_TODO, ONCHANGE_TODO, ONCHANGE_EXISTING_TODO, ONDELETE_TODO, DELETE_ALL } from './types'
 
 const LIMIT = 3
 
@@ -54,5 +54,12 @@ export const resetToRemote = () => async dispatch => {
   dispatch({
     type: FETCH_TODOS,
     payload: await remoteFetch()
+  })
+}
+
+export const deleteAll = () => dispatch => {
+  dispatch({
+    type: DELETE_ALL,
+    payload: {}
   })
 }

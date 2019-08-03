@@ -27,6 +27,15 @@
   border-radius: 30px;
 }
 
+.Entry .Outer:hover {
+  border-color: green;
+}
+
+.Entry .Outer:hover .Checkbox {
+  border-color: green;
+  background-color: green;
+}
+
 .Entry.Completed .Outer {
   border-color: green;
 }
@@ -57,6 +66,10 @@
 }
 
 .NewTodo .Outer {
+  border: 1px black dashed;
+}
+
+.NewTodo:hover .Outer {
   border: 1px black dashed;
 }
 
